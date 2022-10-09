@@ -1,53 +1,155 @@
 module.exports = {
-  extends: ['react-app', 'react-app/jest', 'plugin:prettier/recommended'],
-  ignorePatterns: ['**/*.js'],
+  extends: ["react-app", "react-app/jest", "plugin:prettier/recommended"],
+  ignorePatterns: ["**/*.js"],
   rules: {
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-unused-vars': 'error',
-    'prettier/prettier': [
-      'error',
+    "array-callback-return": "warn",
+    "default-case": ["warn", { commentPattern: "^no default$" }],
+    "dot-location": ["warn", "property"],
+    eqeqeq: ["warn", "smart"],
+    "new-parens": "warn",
+    "no-array-constructor": "warn",
+    "no-caller": "warn",
+    "no-cond-assign": ["warn", "except-parens"],
+    "no-const-assign": "warn",
+    "no-control-regex": "warn",
+    "no-delete-var": "warn",
+    "no-dupe-args": "warn",
+    "no-dupe-class-members": "warn",
+    "no-dupe-keys": "warn",
+    "no-duplicate-case": "warn",
+    "no-empty-character-class": "warn",
+    "no-empty-pattern": "warn",
+    "no-eval": "warn",
+    "no-ex-assign": "warn",
+    "no-extend-native": "warn",
+    "no-extra-bind": "warn",
+    "no-extra-label": "warn",
+    "no-fallthrough": "warn",
+    "no-func-assign": "warn",
+    "no-implied-eval": "warn",
+    "no-invalid-regexp": "warn",
+    "no-iterator": "warn",
+    "no-label-var": "warn",
+    "no-labels": ["warn", { allowLoop: true, allowSwitch: false }],
+    "no-lone-blocks": "warn",
+    "no-loop-func": "warn",
+    "no-mixed-operators": [
+      "warn",
       {
-        // 一行最多 100 字符
-        printWidth: 100,
-        // 使用 4 个空格缩进
-        tabWidth: 4,
-        // 不使用缩进符，而使用空格
-        useTabs: false,
-        // 行尾需要有分号
-        semi: true,
-        // 使用单引号
-        singleQuote: true,
-        // 对象的 key 仅在必要时用引号
-        quoteProps: 'as-needed',
-        // jsx 不使用单引号，而使用双引号
-        jsxSingleQuote: false,
-        // 末尾不需要逗号
-        trailingComma: 'es5',
-        // 大括号内的首尾需要空格
-        bracketSpacing: true,
-        // jsx 标签的反尖括号需要换行
-        jsxBracketSameLine: false,
-        // 箭头函数，只有一个参数的时候，也需要括号
-        arrowParens: 'always',
-        // 每个文件格式化的范围是文件的全部内容
-        rangeStart: 0,
-        rangeEnd: Infinity,
-        // 不需要写文件开头的 @prettier
-        requirePragma: false,
-        // 不需要自动在文件开头插入 @prettier
-        insertPragma: false,
-        // 使用默认的折行标准
-        proseWrap: 'preserve',
-        // 根据显示样式决定 html 要不要折行
-        htmlWhitespaceSensitivity: 'css',
-        // 换行符使用 lf
-        endOfLine: 'lf',
+        groups: [
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"],
+        ],
+        allowSamePrecedence: false,
       },
     ],
+    "no-multi-str": "warn",
+    "no-native-reassign": "warn",
+    "no-negated-in-lhs": "warn",
+    "no-new-func": "warn",
+    "no-new-object": "warn",
+    "no-new-symbol": "warn",
+    "no-new-wrappers": "warn",
+    "no-obj-calls": "warn",
+    "no-octal": "warn",
+    "no-octal-escape": "warn",
+    "no-redeclare": ["warn", { builtinGlobals: false }],
+    "no-regex-spaces": "warn",
+    "no-restricted-syntax": [
+      "warn",
+      "WithStatement",
+      {
+        message: "substr() is deprecated, use slice() or substring() instead",
+        selector: "MemberExpression > Identifier[name='substr']",
+      },
+    ],
+    "no-script-url": "warn",
+    "no-self-assign": "warn",
+    "no-self-compare": "warn",
+    "no-sequences": "warn",
+    "no-shadow-restricted-names": "warn",
+    "no-sparse-arrays": "warn",
+    "no-template-curly-in-string": "error",
+    "no-this-before-super": "warn",
+    "no-throw-literal": "warn",
+    "no-unexpected-multiline": "warn",
+    "no-unreachable": "warn",
+    "no-unused-expressions": [
+      "error",
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+      },
+    ],
+    "no-unused-labels": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        args: "none",
+        ignoreRestSiblings: true,
+      },
+    ],
+    "no-use-before-define": [
+      "warn",
+      {
+        functions: false,
+        classes: false,
+        variables: false,
+      },
+    ],
+    "no-useless-computed-key": "warn",
+    "no-useless-concat": "warn",
+    "no-useless-constructor": "warn",
+    "no-useless-escape": "warn",
+    "no-useless-rename": [
+      "warn",
+      {
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+      },
+    ],
+    "no-with": "warn",
+    "no-whitespace-before-property": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "require-yield": "warn",
+    "rest-spread-spacing": ["warn", "never"],
+    strict: ["warn", "never"],
+    "unicode-bom": ["warn", "never"],
+    "use-isnan": "warn",
+    "valid-typeof": "warn",
+    "getter-return": "warn",
+    "react/forbid-foreign-prop-types": ["warn", { allowInPropTypes: true }],
+    "react/jsx-no-comment-textnodes": "warn",
+    "react/jsx-no-duplicate-props": "warn",
+    "react/jsx-no-target-blank": "warn",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": [
+      "warn",
+      {
+        allowAllCaps: true,
+        ignore: [],
+      },
+    ],
+    "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn",
+    "react/no-danger-with-children": "warn",
+    "react/no-deprecated": "warn",
+    "react/no-direct-mutation-state": "warn",
+    "react/no-is-mounted": "warn",
+    "react/no-typos": "error",
+    "react/require-render-return": "error",
+    "react/style-prop-object": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    // "@typescript-eslint/non-nullable-type-assertion-style": "warn",
+    "@typescript-eslint/prefer-as-const": "warn",
   },
   parserOptions: {
     babelOptions: {
-      presets: [['babel-preset-react-app', false]],
+      presets: [["babel-preset-react-app", false]],
     },
   },
 };
