@@ -1,0 +1,15 @@
+$ node scripts/build.js && node scripts/zip.js
+Creating an optimized production build...
+Failed to compile.
+
+Module parse failed: The keyword 'interface' is reserved (5:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+| import { Dropdown, Menu } from "@arco-design/web-react";
+| 
+> interface TitleProps {
+|   title: string;
+|   favicon: string;
+
+
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

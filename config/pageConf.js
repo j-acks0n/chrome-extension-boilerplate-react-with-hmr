@@ -30,4 +30,8 @@ module.exports = {
     entry: "src/pages/popup/index",
     template: "public/index.html",
   },
+  external: {
+    entry: "src/pages/external/index",
+    template: "public/index.html",
+  },
 };

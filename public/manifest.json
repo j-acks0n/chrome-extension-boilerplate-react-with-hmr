@@ -29,5 +29,7 @@
       "resources": ["logo192.png", "logo512.png", "logo.svg"],
       "matches": []
     }
-  ]
+  ],
+  "permissions": ["system.display", "storage", "unlimitedStorage", "tabs"],
+  "host_permissions": ["*://*/*"]
 }
